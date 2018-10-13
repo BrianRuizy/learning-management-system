@@ -17,16 +17,16 @@ The clients need to build a student information management system. This system d
 1.2	Analysis
 Based on the requirements, analyze the software and give a planning. Note, use the analysis strategies studied in the lectures to produce necessary artifacts of analysis.
 
-1.3	System Development Life Cycle
-Apply the knowledge you learned from the class, apply 2D life cycle models on the project. Select the suitable life cycle models and present your reasons.
+1.3	System Development Life Cycle => Evolutionary Model 
+Apply the knowledge you learned from the class, apply 2D life cycle models on the project. Select the suitable life cycle models and present your reasons. 
 
-1.4	Team Work
+1.4	Team Work => Chief Programmer Model
 Select a team model as presented in the chapter 4. Describe your team organization and clarify each team member’s responsibility. Since this is a team project, the collaboration among team members is required. Corresponding artifacts are required to be submitted.
 
 1.5	Version Control
 Register account on https://github.com/ to study version control techniques for your team work on the project. A list of basic git commands is attached with this project assignment instruction.
 
-1.6	Apply UML Method 
+1.6	Apply UML Method => Draw.io (website)
 Through requirements and analysis of the project, draw out necessary UML diagrams in the project.
 
 1.7	Data Records
