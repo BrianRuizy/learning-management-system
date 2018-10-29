@@ -1,0 +1,42 @@
+Class: School
+Contains all Admins
+Contains all Teachers
+Contains all Students
+Contains all Courses
+Calculates semester information.
+
+Class: Admin
+Creates Course and adds to Courses
+Creates Teacher and adds to Teachers
+Creates Admin and adds to Admins
+Creates Student and adds to Students
+Registers Teachers to Courses
+Registers Students to Courses
+Edits Course
+Edits Teacher
+Edits Admin
+Edits Student
+Views Course
+Views Teacher
+Views Admin
+Views Student
+Inherits Teacher
+
+Class: Teacher
+Creates Assignments
+Creates Exams
+Updates gradeWeights in Assignments
+Updates grade in Assignments
+Updates grade Exams
+
+Class: Student
+Updates work in Assignment
+Updates turnedIn in Assignment
+
+Class: Course
+Contains information about class.
+Calculates grade information for course
+
+Class: Assignment
+Contains information: Description, Grade, TurnedIn, 
+
