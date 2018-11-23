@@ -1,0 +1,6 @@
+1.3	System Development Life Cycle => Evolutionary Model 
+Apply the knowledge you learned from the class, apply 2D life cycle models on the project. Select the suitable life cycle models and present your reasons. 
+
+We are using the Code and Fix model.  Due to time and knowledge constraints this is the only usable model.
+
+This project has no long term maintance needs, so it is not neccesary to consider future devolopment.
