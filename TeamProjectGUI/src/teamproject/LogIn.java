@@ -8,18 +8,15 @@ import javax.swing.JOptionPane;
  * @author OscarDuarte
  */
 public class LogIn extends javax.swing.JDialog {
-    adminMenu menuA;
-    studentMenu menuS;
-    admin admin = new admin();
+    adminMenu menuA = new adminMenu();
+    studentMenu menuS = new studentMenu();
+    admin admin = new admin(menuA.admin);
+    
     
      private LogIn() {
         initComponents();
     }
-     
-    public LogIn(ArrayList<student> students) {       
-        initComponents();
-        this.admin.students = (ArrayList) students.clone();
-    }   
+
           
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -29,11 +26,12 @@ public class LogIn extends javax.swing.JDialog {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         txtUsername = new javax.swing.JTextField();
-        txtPassword = new javax.swing.JTextField();
         btnEnter = new javax.swing.JButton();
         btnExit = new javax.swing.JButton();
+        txtPassword = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Independent School District ");
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("LOG IN"));
 
@@ -55,6 +53,13 @@ public class LogIn extends javax.swing.JDialog {
             }
         });
 
+        txtPassword.setName("txtPassword"); // NOI18N
+        txtPassword.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtPasswordActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -67,9 +72,9 @@ public class LogIn extends javax.swing.JDialog {
                             .addComponent(jLabel1)
                             .addComponent(jLabel2))
                         .addGap(34, 34, 34)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txtUsername, javax.swing.GroupLayout.DEFAULT_SIZE, 134, Short.MAX_VALUE)
-                            .addComponent(txtPassword)))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(89, 89, 89)
                         .addComponent(btnEnter)
@@ -77,6 +82,9 @@ public class LogIn extends javax.swing.JDialog {
                         .addComponent(btnExit)))
                 .addContainerGap(28, Short.MAX_VALUE))
         );
+
+        jPanel1Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {txtPassword, txtUsername});
+
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
@@ -121,35 +129,33 @@ public class LogIn extends javax.swing.JDialog {
     private void btnEnterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEnterActionPerformed
         boolean found = false;
         
-        String username = txtUsername.getText();
-        int password = Integer.parseInt(txtPassword.getText());
-        
-        
-        
-        if(username.equals(admin.name) && password == admin.password){
-            if(admin.students.isEmpty()){
-                menuA = new adminMenu();//no students already enrolled
-            }
-            else{
-                menuA = new adminMenu(admin.students);//students already exists
-            }
-            
-            setVisible(false);//Hide login menu         
-            menuA.setVisible(true);//Show admin menu
+        try
+        {        
+            String username = txtUsername.getText();
+            String temp = new String(txtPassword.getPassword());
+            int password = Integer.parseInt(temp);
+            if(username.equals(admin.uName) && password == admin.getPassword())
+            {
+            setVisible(false);
+            menuA.setVisible(true);
             found = true;
-        }
-        else{
-            for(int i = 0; i < admin.students.size(); i++){
-                if(username.equals(admin.students.get(i).username) && password == admin.students.get(i).id){
-                    //Open student menu 
-                    menuS = new studentMenu(admin.students.get(i), admin.students);
-                    
-                    menuS.setVisible(true);//show student menu                
-                    setVisible(false);//Hide login menu
-                    found = true;
+            }
+            else
+            {
+                for(int i = 0; i < admin.students.size(); i++){
+                    if(username.equals(admin.students.get(i).username) && password == admin.students.get(i).getID()){
+                        setVisible(false);
+                        menuS.setVisible(true);
+                        found = true;
+                    }
                 }
             }
         }
+        catch(Exception e)
+        {
+            JOptionPane.showMessageDialog(null, "Invalid Password");
+        }
+
         
         if(found == false){
             JOptionPane.showMessageDialog(null, "Incorrect username or password");
@@ -164,6 +170,10 @@ public class LogIn extends javax.swing.JDialog {
     private void btnExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExitActionPerformed
         System.exit(0);
     }//GEN-LAST:event_btnExitActionPerformed
+
+    private void txtPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPasswordActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtPasswordActionPerformed
 
     /**
      * @param args the command line arguments
@@ -208,7 +218,7 @@ public class LogIn extends javax.swing.JDialog {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField txtPassword;
+    private javax.swing.JPasswordField txtPassword;
     private javax.swing.JTextField txtUsername;
     // End of variables declaration//GEN-END:variables
 }
