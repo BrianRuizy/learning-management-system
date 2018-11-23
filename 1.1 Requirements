@@ -1,0 +1,12 @@
+1.1	Requirements
+The clients need to build a student information management system. This system doesn’t need to include all features and functions as shown in the paragraph above. The software system only stores and retrieves students’ partial information in the current semester and other basic information including student’s name, student’s ID, registered courses in the current semester, each exam’s score in one course, GPA calculation in the current semester. Use the strategies studied in the lectures to accomplish the requirement artifacts. The goal system has two types of accessing modes, administrator and user. Student information management system is managed by an administrator. It is the job of the administrator to insert update and monitor the whole process. When a user log in to the system. He/she would only view details of the student. He/she can't perform any changes.
+
+Requirements.
+
+This software will run a gui with two types of user accounts.
+
+
+Required information for the Admin account will be 
+
+The first account, Admin will be able to make new accounts for other Admins and Students.
+
