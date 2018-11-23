@@ -4,12 +4,14 @@ Describe your team organization and clarify each team member’s responsibility.
 Since this is a team project, the collaboration among team members is required. 
 Corresponding artifacts are required to be submitted.
 
+We are running a semi democratic team.  There is no chief programmer or organizational structure.
+
 Team member name:
 
 Stephen Autry	- Paperwork
-Gerardo Mares	- Programming
-Eric Anaya		- Programming
-Brian Ruiz		- Paperwork
-Oscar Duarte	- Programming
+Gerardo Mares	- Programming - File input and output
+Eric Anaya		- Programming - Gui
+Brian Ruiz		- Paperwork   - SNMP
+Oscar Duarte	- Programming - Gui
 
 
