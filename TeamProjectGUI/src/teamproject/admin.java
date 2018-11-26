@@ -30,11 +30,5 @@ public class admin extends user{
         students.add(stu);
         
     }
-    public void createTeacher()
-    {
-    }
-    
-    public void createCourse()
-    {
-    }
+
 }

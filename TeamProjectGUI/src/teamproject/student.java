@@ -5,47 +5,61 @@
  */
 package teamproject;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author OscarDuarte
  */
 public class student extends user{
     public String username;
-    public int test1, test2, test3;
-    public float gpa, gradeT;
-    public char letter;
-    
+    public double gpa;
+    public ArrayList<course> courses = new ArrayList<>();
+ 
+    //contrusctor
     public student()
     {
         super();
-        this.test1 = 0;
-        this.test2 = 0;
-        this.test3 = 0;
         this.gpa = 0;
         this.username = "";
-        this.letter = 'n';
     }
-    public student(String f, String l, int passw,int t1, int t2, int t3)
+    public student(String f, String l, int passw, ArrayList<course> coursesT)
     {
         super(f,l,passw);
-        this.test1 = t1;
-        this.test2 = t2;
-        this.test3 = t3;
         this.username = l + f.charAt(0);
-        //this.gpa = //gpa func
-        this.gradeT = (t1+t2+t3)/3;
+        this.courses = coursesT;
+        this.gpa = gradePointAvg();
     }
     
-    //public double gradePA()
-    //{
-        
-        
-    //}
+    public double gradePointAvg()
+    {
+        double totalCredit = 0;
+        double count = 0;
+        for (course course : courses) {
+            if(course.getTotal() != 0){
+            count += 1;
+            totalCredit += course.getCredit();
+            }   
+        }
+        return totalCredit / count;
+    }
+    
+    public double count()
+    {
+        double count = 0;
+        for (course course : courses) {
+            if(course.getTotal() != 0){
+            count += 1;
+            }   
+        }
+        return count;
+    }
     
     public String getUserName()
     {
         return username;
     }
+ 
     
     
     

@@ -107,8 +107,10 @@ public class adminMenu extends javax.swing.JFrame{
     //***************
     private void btnAdminLogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdminLogoutActionPerformed
 
-        //LogIn login = new LogIn();
-        setVisible(false);
+        
+       setVisible(false);
+     
+        
         
     }//GEN-LAST:event_btnAdminLogoutActionPerformed
 

@@ -32,9 +32,12 @@ public class viewAllMenu extends javax.swing.JFrame {
     //ADDS ALL STUDENTS TO TABLE//
     public void addtoTable(admin admin)
     {
+        
+        course temp = null;
         DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
         for (student student : admintemp.students) {
-            model.addRow(new Object[]{ student.getID() , student.getUserName(), student.getfName() + " " + student.getlName(), student.test1, student.test2, student.test3, student.gradeT});
+      
+            model.addRow(new Object[]{ student.getID() , student.getUserName(), student.getfName() + " " + student.getlName(), student.courses.get(0).getTotal(), student.courses.get(1).getTotal(), student.courses.get(2).getTotal(), student.courses.get(3).getTotal(), student.courses.get(4).getTotal(),student.gradePointAvg()});
         }
     }
 
@@ -61,7 +64,7 @@ public class viewAllMenu extends javax.swing.JFrame {
 
             },
             new String [] {
-                "I.D", "UserName", "Name", "Class 1", "Class 2", "Class 3", "G.P.A"
+                "I.D", "UserName", "Name", "Class 1", "Class 2", "Class 3", "Class 4", "Class 5", "G.P.A"
             }
         ));
         jTable1.addContainerListener(new java.awt.event.ContainerAdapter() {
@@ -74,19 +77,14 @@ public class viewAllMenu extends javax.swing.JFrame {
             jTable1.getColumnModel().getColumn(0).setPreferredWidth(50);
             jTable1.getColumnModel().getColumn(1).setPreferredWidth(90);
             jTable1.getColumnModel().getColumn(2).setPreferredWidth(120);
-            jTable1.getColumnModel().getColumn(3).setPreferredWidth(60);
-            jTable1.getColumnModel().getColumn(4).setPreferredWidth(60);
-            jTable1.getColumnModel().getColumn(5).setPreferredWidth(60);
-            jTable1.getColumnModel().getColumn(6).setPreferredWidth(60);
+            jTable1.getColumnModel().getColumn(8).setPreferredWidth(60);
         }
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -108,7 +106,7 @@ public class viewAllMenu extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(396, Short.MAX_VALUE)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );

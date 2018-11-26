@@ -136,15 +136,20 @@ public class LogIn extends javax.swing.JDialog {
             int password = Integer.parseInt(temp);
             if(username.equals(admin.uName) && password == admin.getPassword())
             {
-            setVisible(false);
+            //setVisible(false);
+            txtUsername.setText("");
+            txtPassword.setText("");
             menuA.setVisible(true);
             found = true;
             }
             else
             {
                 for(int i = 0; i < admin.students.size(); i++){
-                    if(username.equals(admin.students.get(i).username) && password == admin.students.get(i).getID()){
-                        setVisible(false);
+                    if(username.equals(admin.students.get(i).username) && password == admin.students.get(i).getPassword()){
+                        //setVisible(false);
+                        txtUsername.setText("");
+                        txtPassword.setText("");
+                        menuS.initialize(admin.students.get(i));
                         menuS.setVisible(true);
                         found = true;
                     }
@@ -164,6 +169,7 @@ public class LogIn extends javax.swing.JDialog {
         }
     }//GEN-LAST:event_btnEnterActionPerformed
 
+   
     //********
     //btnExit*
     //********
