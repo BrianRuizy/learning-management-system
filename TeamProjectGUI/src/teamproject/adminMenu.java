@@ -9,7 +9,7 @@ import java.util.ArrayList;
  */
 public class adminMenu extends javax.swing.JFrame{
     admin admin = new admin("bobby", "ricky", 1234);
-    addStudent addMenu;
+    addStudent addMenu = new addStudent();
     
     public adminMenu() {
         initComponents();
@@ -86,17 +86,17 @@ public class adminMenu extends javax.swing.JFrame{
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(20, 20, 20)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(28, 28, 28))
+                .addContainerGap(20, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(21, 21, 21)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addContainerGap(24, Short.MAX_VALUE))
         );
 
         pack();
@@ -107,8 +107,9 @@ public class adminMenu extends javax.swing.JFrame{
     //***************
     private void btnAdminLogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdminLogoutActionPerformed
 
-        
+        initializeadd();
        setVisible(false);
+       
      
         
         
@@ -126,12 +127,9 @@ public class adminMenu extends javax.swing.JFrame{
         
     }//GEN-LAST:event_btnAddStudentActionPerformed
 
-    //*************
-    //View Student*
-    //*************
-    private void btnViewStudentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewStudentActionPerformed
-    
-        //This ADDs new student
+    public void initializeadd()
+    {
+           //This ADDs new student
         if(addMenu.tempStudent != null)
             ///prob when addMenu pops up and clicks exit
         {
@@ -140,7 +138,14 @@ public class adminMenu extends javax.swing.JFrame{
                 admin.students.add(addMenu.tempStudent);
             }
         }
- 
+    }
+    //*************
+    //View Student*
+    //*************
+    private void btnViewStudentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewStudentActionPerformed
+    
+     
+        initializeadd();
         
         // This views all student
         //If for null students//

@@ -23,7 +23,7 @@ public class course {
         this.test3 = 0;
         this.credit = 0;
         this.total = 0;
-        this.name = "";
+        this.name = "-";
         this.letterGrade = '-';
     }
     
