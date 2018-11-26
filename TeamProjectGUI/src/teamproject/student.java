@@ -6,12 +6,14 @@
 package teamproject;
 
 import java.util.ArrayList;
+import java.text.DecimalFormat;
 
 /**
  *
  * @author OscarDuarte
  */
 public class student extends user{
+    
     public String username;
     public double gpa;
     public ArrayList<course> courses = new ArrayList<>();

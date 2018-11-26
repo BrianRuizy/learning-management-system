@@ -25,6 +25,7 @@ public class course {
         this.total = 0;
         this.name = "-";
         this.letterGrade = '-';
+        this.cNumber = 0;
     }
     
     public course(String name, int cNumber, int t1, int t2, int t3, int credit)
@@ -103,6 +104,11 @@ public class course {
         else
             return 0;
      
+    }
+    
+    public int getClassNumber()
+    {
+        return cNumber;
     }
     
     public String getClassName()
