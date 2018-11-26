@@ -47,6 +47,8 @@ public class course {
     
     public char letterG()
     {
+        if(total != 0)
+        {
         if(total > 89 && total <= 100)
         {
             return'A';
@@ -66,6 +68,11 @@ public class course {
         }
         else
             return 'F';
+        }
+        else
+        {
+            return '-';
+        }
     }
     
     public double getTotal()
@@ -96,6 +103,11 @@ public class course {
         else
             return 0;
      
+    }
+    
+    public String getClassName()
+    {
+        return name;
     }
     
 }
